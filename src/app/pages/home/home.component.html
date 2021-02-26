@@ -1,0 +1,73 @@
+<app-navbar [summary]="summary"></app-navbar>
+<div class="container">
+    <div class="panel">
+        <div class="country">
+            <div class="name">
+                <img  [src]="imagem" alt=""/>
+                <p>{{name}}</p>
+            </div>
+            <div class="change-country" (click)="show()">
+                change
+                <i class='bx bx-chevron-down-circle'></i>
+            </div>
+
+            <div [class]="search_country">
+                <div class="search-box">
+                    <i class="bx bx-search">
+                        <input type="text" id="search-input" placeholder="Search..."  [(ngModel)]="searchFilter" >
+                    </i>
+                </div>
+                <div class="country-list">
+                    <ul *ngFor="let country of countries">
+                        <li (click)="selected(country)" >
+                            <img [src]="country.flag" />
+                             <p>{{country.name}}</p>   
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="data" >  
+            <div class="division" > 
+                <div class="total-cases">
+                    <div class="title">
+                        Total cases
+                    </div>
+                    <div class="value">
+                        {{totalConfirmed}}
+                    </div>
+                    <div class="new-value">
+                        +{{newConfirmed}}
+                    </div>
+                </div>     
+                
+                <div class="recovered">
+                    <div class="title">
+                        Recovered
+                    </div>
+                    <div class="value">
+                        {{totalRecovered}}
+                    </div>
+                    <div class="new-value">
+                        +{{newRecovered}}
+                    </div>
+                </div>
+            </div>   
+            <div class="deaths">
+                <div class="title">
+                    Deaths
+                </div>
+                <div class="value">
+                    {{totalDeaths}}
+                </div>
+                <div class="new-value">
+                    +{{newDeaths}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chart">
+        <canvas id="axes_line_chart"></canvas>
+    </div>
+</div> 
+<app-footer></app-footer>

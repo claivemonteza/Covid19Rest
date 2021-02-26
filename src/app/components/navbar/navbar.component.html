@@ -1,0 +1,51 @@
+<nav>
+    <div class="logo">
+        <a href="#">        
+            <img [src]="image" alt="logo">
+            <h2>Covid19</h2>
+        </a>
+    </div>
+    <div class="global">
+        <div class="name">
+            Global
+        </div>
+        <div class="data" [(ngModel)]="summary">  
+            <div class="division"> 
+                <div class="total-cases">
+                    <div class="title">
+                        Total cases
+                    </div>
+                    <div class="value">
+                        {{summary.Global.TotalConfirmed}}
+                    </div>
+                    <div class="new-value">
+                        +{{summary.Global.NewConfirmed}}
+                    </div>
+                </div>     
+            
+                <div class="recovered">
+                    <div class="title">
+                        Recovered
+                    </div>
+                    <div class="value">
+                        {{summary.Global.TotalRecovered}}
+                    </div>
+                    <div class="new-value">
+                        +{{summary.Global.NewRecovered}}
+                    </div>
+                </div>
+            </div>   
+            <div class="deaths">
+                <div class="title">
+                   Deaths
+                </div>
+                <div class="value">
+                    {{summary.Global.TotalDeaths}}
+                </div>
+                <div class="new-value">
+                    +{{summary.Global.NewDeaths}}
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

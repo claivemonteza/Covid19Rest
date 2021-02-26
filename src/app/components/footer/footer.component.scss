@@ -1,0 +1,24 @@
+ 
+.footer{
+    height: 51px;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px;
+}
+   
+.copyright{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.copyright a {
+    text-decoration: none;
+}   
+
+.copyright a, .copyright a i{
+    color: #FFF;
+}
