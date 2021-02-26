@@ -4,10 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. 
+Navigate to `http://localhost:4200/`.
 
 <div align="center">
-  <img alt="image" src="https://github.com/claivemonteza/Covid19Rest/tree/main/src/assets/img/image.png">
+  <img alt="image" src="https://github.com/claivemonteza/Covid19Rest/blob/main/src/assets/img/image.png">
 </div>
 
 # Live Site
