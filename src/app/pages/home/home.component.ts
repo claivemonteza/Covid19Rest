@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   private source: Country[];
   searchFilter?: string;
-  name="Loading...";
+  name="Country";
   imagem="";
   value="";
   summary?:any;
