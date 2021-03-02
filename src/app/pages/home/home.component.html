@@ -1,4 +1,4 @@
-<app-navbar [summary]="summary"></app-navbar>
+<app-navbar [global]="global"></app-navbar>
 <div class="container">
     <div class="panel">
         <div class="country">
@@ -10,7 +10,6 @@
                 change
                 <i class='bx bx-chevron-down-circle'></i>
             </div>
-
             <div [class]="search_country">
                 <div class="search-box">
                     <i class="bx bx-search">
@@ -27,17 +26,17 @@
                 </div>
             </div>
         </div>
-        <div class="data" >  
+        <div class="data" *ngIf="corona" >  
             <div class="division" > 
                 <div class="total-cases">
                     <div class="title">
                         Total cases
                     </div>
                     <div class="value">
-                        {{totalConfirmed}}
+                        {{corona.TotalConfirmed}}
                     </div>
                     <div class="new-value">
-                        +{{newConfirmed}}
+                        +{{corona.NewConfirmed}}
                     </div>
                 </div>     
                 
@@ -46,10 +45,10 @@
                         Recovered
                     </div>
                     <div class="value">
-                        {{totalRecovered}}
+                        {{corona.TotalRecovered}}
                     </div>
                     <div class="new-value">
-                        +{{newRecovered}}
+                        +{{corona.NewRecovered}}
                     </div>
                 </div>
             </div>   
@@ -58,16 +57,16 @@
                     Deaths
                 </div>
                 <div class="value">
-                    {{totalDeaths}}
+                    {{corona.TotalDeaths}}
                 </div>
                 <div class="new-value">
-                    +{{newDeaths}}
+                    +{{corona.NewDeaths}}
                 </div>
             </div>
         </div>
     </div>
     <div class="chart">
-        <canvas id="axes_line_chart"></canvas>
+        <canvas id="axes_line_chart" height="95px"></canvas>
     </div>
 </div> 
 <app-footer></app-footer>

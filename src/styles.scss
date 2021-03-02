@@ -7,11 +7,16 @@
 
 
 :root{
+    --black:hsl(200, 15%, 8%);
     --white:hsl(0,0%,100%);
-    --l-bg: hsl(0, 0%, 98%);
+    --white-min:hsl(0,0%,98%);
+    --gray:hsl(0, 0%, 52%);
+    --d-bg: hsl(0, 0%, 98%);
+    --l-bg: var(--white-min);
     --l-element: var(--white);
-    --l-text: hsl(200, 15%, 8%);
-    --l-input: hsl(0, 0%, 52%);
+    --d-text: var(--white);
+    --l-text:var(--black);
+    --l-input: var(--gray);
 }
 
 *{

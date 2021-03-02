@@ -6,10 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GeoLocationService {
 
-  private url = 'http://www.geoplugin.net/json.gp?ip';
+  private url = 'https://ipapi.co/json/';
   constructor(private http: HttpClient) { }
 
-  getLocation(ip: string){
-    return this.http.get(`${this.url}=`+ip);
+  getLocation(){
+    return this.http.get(`${this.url}`);
   }
 }

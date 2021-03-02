@@ -12,10 +12,6 @@ export class CoronaService {
 
   constructor(private http: HttpClient) { }
 
-  getCoronaRealTimeData(country){
-    return this.http.get<any[]>(`${this.url}/total/dayone/country/`+country);
-  }
-
   getWorldTotal(){
     return this.http.get<any[]>(`${this.url}/world/total`);
   }
@@ -24,15 +20,16 @@ export class CoronaService {
     return this.http.get<any[]>(`${this.url}/summary`);
   }
 
-  getCoronaCountries(){
-    return this.http.get<any>(`${this.url}/countries`);
-  }
-  
-  getCoronaByCountryCode(countryCode:string){
-    return this.http.get<any>(`${this.url}/countries`);
+  getTotalCases(country){
+    return this.http.get<any[]>(`${this.url}/total/country/`+country+`/status/confirmed`);
   }
 
-  getCountryTotalByDayOne(name:string){
-    return this.http.get<any>(`${this.url}/total/dayone/country/`+name);
+  getTotalRecovered(country:string){
+    return this.http.get<any[]>(`${this.url}/total/country/`+country+`/status/recovered`);
   }
+
+  getTotalDeaths(country:string){
+    return this.http.get<any[]>(`${this.url}/total/country/`+country+`/status/deaths`);
+  }
+
 }
