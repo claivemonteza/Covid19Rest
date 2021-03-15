@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
   constructor(private countryservice: CountryService, private coronaService: CoronaService, private locationService: GeoLocationService) { }
 
   ngOnInit(): void {
-    this.getChart();
+    /*this.getChart();*/
 
     this.coronaService.getGlobalData().subscribe((summary)=>{
       this.summary=summary;
@@ -93,7 +93,6 @@ export class HomeComponent implements OnInit {
     this.countrys.forEach(element => {
       if(element.Country===country.name){
         this.corona=element;
-       
       }
     });
   }
