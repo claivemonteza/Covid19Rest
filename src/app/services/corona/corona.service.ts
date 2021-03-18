@@ -20,16 +20,20 @@ export class CoronaService {
     return this.http.get<any[]>(`${this.url}/summary`);
   }
 
-  getTotalCases(country){
-    return this.http.get<any[]>(`${this.url}/total/country/`+country+`/status/confirmed`);
+  getTotalCases(name:any){
+    return this.http.get<any[]>(`${this.url}/total/country/${name}/status/confirmed`);
   }
 
-  getTotalRecovered(country:string){
-    return this.http.get<any[]>(`${this.url}/total/country/`+country+`/status/recovered`);
+  getTotalRecovered(name){
+    return this.http.get<any[]>(`${this.url}/total/country/${name}/status/recovered`);
   }
 
-  getTotalDeaths(country:string){
-    return this.http.get<any[]>(`${this.url}/total/country/`+country+`/status/deaths`);
+  getTotalDeaths(name){
+    return this.http.get<any[]>(`${this.url}/total/country/${name}/status/deaths`);
+  }
+
+  getTotalStatus(name){
+    return this.http.get<any[]>(`${this.url}/total/country/${name}`);
   }
 
 }

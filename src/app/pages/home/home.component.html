@@ -3,7 +3,7 @@
     <div class="panel">
         <div class="country">
             <div class="name">
-                <img  [src]="imagem" alt=""/>
+                <img  [src]="flag" alt=""/>
                 <p>{{name}}</p>
             </div>
             <div class="change-country" (click)="show()">
@@ -26,17 +26,17 @@
                 </div>
             </div>
         </div>
-        <div class="data" [(ngModel)]="corona">  
+        <div class="data" [(ngModel)]="corona" ngDefaultControl>  
             <div class="division" > 
                 <div class="total-cases">
                     <div class="title">
                         Total cases
                     </div>
                     <div class="value">
-                        {{corona.TotalConfirmed}}
+                        {{corona?.TotalConfirmed}}
                     </div>
                     <div class="new-value">
-                        +{{corona.NewConfirmed}}
+                        +{{corona?.NewConfirmed}}
                     </div>
                 </div>     
                 
@@ -45,10 +45,10 @@
                         Recovered
                     </div>
                     <div class="value">
-                        {{corona.TotalRecovered}}
+                        {{corona?.TotalRecovered}}
                     </div>
                     <div class="new-value">
-                        +{{corona.NewRecovered}}
+                        +{{corona?.NewRecovered}}
                     </div>
                 </div>
             </div>   
@@ -57,10 +57,10 @@
                     Deaths
                 </div>
                 <div class="value">
-                    {{corona.TotalDeaths}}
+                    {{corona?.TotalDeaths}}
                 </div>
                 <div class="new-value">
-                    +{{corona.NewDeaths}}
+                    +{{corona?.NewDeaths}}
                 </div>
             </div>
         </div>

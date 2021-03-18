@@ -9,17 +9,17 @@
         <div class="name">
             Global
         </div>
-        <div class="data" [(ngModel)]="global">  
+        <div class="data" [(ngModel)]="global" ngDefaultControl>  
             <div class="division"> 
                 <div class="total-cases">
                     <div class="title">
                         Total cases
                     </div>
                     <div class="value">
-                        {{global.TotalConfirmed}}
+                        {{global?.TotalConfirmed}}
                     </div>
                     <div class="new-value">
-                        +{{global.NewConfirmed}}
+                        +{{global?.NewConfirmed}}
                     </div>
                 </div>     
             
@@ -28,10 +28,10 @@
                         Recovered
                     </div>
                     <div class="value">
-                        {{global.TotalRecovered}}
+                        {{global?.TotalRecovered}}
                     </div>
                     <div class="new-value">
-                        +{{global.NewRecovered}}
+                        +{{global?.NewRecovered}}
                     </div>
                 </div>
             </div>   
@@ -40,10 +40,10 @@
                    Deaths
                 </div>
                 <div class="value">
-                    {{global.TotalDeaths}}
+                    {{global?.TotalDeaths}}
                 </div>
                 <div class="new-value">
-                    +{{global.NewDeaths}}
+                    +{{global?.NewDeaths}}
                 </div>
             </div>
         </div>

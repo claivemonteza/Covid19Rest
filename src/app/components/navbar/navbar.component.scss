@@ -28,8 +28,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     width: 586px;
-    border-style: groove;
-    border-radius: 33px;
+    border-style: none;
 
     @media (min-width:240px){
         display: block;
@@ -66,7 +65,7 @@ nav{
     margin-top: 10px;
     margin-left: 30px;
     font-size: 25px;
-    color: #ffe7e7;
+    color: #080808;
 }
 
 
@@ -110,7 +109,7 @@ nav{
 }
 
 .title, .new-value, .total-cases .value{
-    color: #ffe7e7;
+    color: #080808;
 }
 
 .title, .value, .new-value{
@@ -143,7 +142,7 @@ nav{
 .logo h2{
     font-size: 24px;
     margin-top: 7px;
-    color: #fff;
+    color: #ff5656;
 }
 
 div{
