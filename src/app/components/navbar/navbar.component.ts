@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  image:string ="assets/img/logo.png";
+  image:string ="https://raw.githubusercontent.com/claivemonteza/Covid19Rest/main/src/assets/img/logo.png";
 
   @Input()
   global?:any;
