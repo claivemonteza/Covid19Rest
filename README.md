@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
-# Coronavirus COVID19 API
+## Coronavirus COVID19 API
 https://documenter.getpostman.com/view/10808728/SzS8rjbc
 
 
@@ -17,5 +17,5 @@ Navigate to `http://localhost:4200/`.
 
 
 
-# Live Site
+## Live Site
 https://claivemonteza.github.io/Covid19Rest/
