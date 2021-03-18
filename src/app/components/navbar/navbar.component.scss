@@ -11,10 +11,9 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 2rem 1rem;
-    
     @media (min-width:240px){
         display: block;
-        padding:1.75rem 1.5rem;
+        padding:1.1rem 1.5rem;
     }
 
     @media (min-width:876px){
@@ -55,7 +54,7 @@ nav{
 }
 
 .global .total-cases, .recovered, .deaths{
-    margin-right: 50px;
+    margin-right: 30px;
     align-items: center;
 }
 
@@ -89,38 +88,41 @@ nav{
 }
 
 .global .title{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     @media (min-width:240px){
-        width: 107px;
+        width: 127px;
     }
 }
 
 .value{
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 .new-value{
-    font-size: 1.3rem;
+    font-size: 0.8rem;
 
     @media (min-width:240px){
         margin-bottom:1px ;
     }
 }
 
-.title, .new-value, .total-cases .value{
-    color: #080808;
+.total-cases .title, .total-cases .value, .total-cases .new-value{
+    color: #1b7fc5;
 }
+
+
+
 
 .title, .value, .new-value{
-    height: 25px;
+    height: 20px;
 }
 
-.recovered .value{
+.recovered .title, .recovered .value, .recovered .new-value{
     color: #0db5a5;
 }
 
-.deaths .value{
+.deaths .title, .deaths .value, .deaths .new-value{
     color: #ff5656;
 }
 
@@ -157,5 +159,5 @@ div{
 }
 
 :host-context(.dark) nav{
-    background-color: var(--d-element);
+    background-color:var(--d-element); /* #ded7d7;*/
 }

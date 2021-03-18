@@ -30,10 +30,6 @@
 
 }
 
-.total-cases .title, .total-cases .value, .total-cases .new-value{
-    font-weight: bold;
-    color: #080808;
-}
 
 .country, .total-cases, .recovered, .deaths{
     height: 100px;
@@ -50,6 +46,7 @@
     font-size: 1.8rem;
     color:#080808;
     font-weight: bold;
+    padding-right: 15rem;
 }
 
 .name img{
@@ -75,11 +72,19 @@
     }
 }
 
-.recovered .value{
+.total-cases .title, .total-cases .value, .total-cases .new-value{
+    font-weight: bold;
+    color: #1b7fc5;
+}
+
+
+.recovered .title, .recovered .value,  .new-value{
+    font-weight: bold;
     color: #009688;
 }
 
-.deaths .value{
+.deaths .title, .deaths .value, .deaths .new-value{
+    font-weight: bold;
     color: #f44336;
 }
 
@@ -134,6 +139,7 @@
     min-height: 285px;
     margin: 0 auto;
    /* padding: 50px 0;*/
+   padding-top: 3rem;
 }
 
 /* -------- SEARCH COUNTRY -------- */
@@ -152,12 +158,13 @@
     background-color: #111;
     z-index: 1;
     border-radius: 20px;
-    margin-left: 105px;
+    margin-left: 90px;
 }
 
 .search-box i{
     font-size: 17px;
     margin: 16px 0px 12px 4px;
+    color: #fff;
 }
 
 .search-box input{
@@ -185,7 +192,7 @@
     background-color: #111;
     opacity: 0.5;
     overflow: scroll;
-    margin-left: 107px;
+    margin-left: 94px;
 }
 
 .country-list img{
