@@ -5,21 +5,6 @@
             <h2>Covid19</h2>
         </a>
     </div>
-    <div [class]="search_country">
-        <div class="search-box">
-            <i class="bx bx-search">
-                <input type="text" id="search-input" placeholder="Search..."  [(ngModel)]="searchFilter" >
-            </i>
-        </div>
-        <div class="country-list">
-            <ul *ngFor="let country of countries">
-                <li (click)="selected(country)" >
-                    <img [src]="country.flag" />
-                     <p>{{country.name}}</p>   
-                </li>
-            </ul>
-        </div>
-    </div>
     <div class="global">
         <div class="name">
             Global
