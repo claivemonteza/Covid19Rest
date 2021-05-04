@@ -128,6 +128,7 @@ export class HomeComponent implements OnInit {
     if (myChart) {
       myChart.destroy();
     }
+    
     myChart = new Chart('axes_line_chart', {
       type: 'line',
       data: {
@@ -140,6 +141,7 @@ export class HomeComponent implements OnInit {
             borderColor: '#1b7fc5',
             backgroundColor: '#1b7fc5',
             borderWidth: 1,
+            type: 'bar',
           },
           {
             label: 'Recovered',
@@ -149,6 +151,8 @@ export class HomeComponent implements OnInit {
             borderColor: '#009688',
             backgroundColor: '#009688',
             borderWidth: 1,
+            type: 'bar',
+           
           },
           {
             label: 'Deaths',
@@ -165,12 +169,14 @@ export class HomeComponent implements OnInit {
       options: {
         responsive: true,
         maintainAspectRadio: false,
+        
         scales: {
           yAxes: [
             {
               stacked: true,
             },
           ],
+
         },
       },
     });
