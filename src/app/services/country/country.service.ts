@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
-import { Country } from '../../model/Country.model';
+import { Country } from 'src/app/model/country.model';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
 
-  private url = 'https://restcountries.com/v2';
+  private url = `${environment.country}`;
 
   constructor(private http: HttpClient) { }
 

@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { Summary } from 'src/app/model/summary.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoronaService {
 
-  private url = 'https://api.covid19api.com';
+  private url = `${environment.covid}`;
 
   constructor(private http: HttpClient) { }
 
