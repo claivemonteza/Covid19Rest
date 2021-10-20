@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  name:'prod',
+  production: false,
+  name:'dev',
   api:'https://api.covid19api.com',
   apicountry: 'https://restcountries.com/v2',
   apigeolocation: 'https://ipapi.co/json/'
