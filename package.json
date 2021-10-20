@@ -7,6 +7,7 @@
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
+    "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
