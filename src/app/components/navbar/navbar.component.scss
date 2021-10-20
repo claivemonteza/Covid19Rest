@@ -1,0 +1,163 @@
+:root{
+    --white:hsl(0,0%,100%);
+    --l-bg: hsl(0, 0%, 98%);
+    --l-element: var(--white);
+    --l-text: hsl(200, 15%, 8%);
+    --l-input: hsl(0, 0%, 52%);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+    @media (min-width:240px){
+        display: block;
+        padding:1.1rem 1.5rem;
+    }
+
+    @media (min-width:876px){
+        display: flex;
+    }
+
+}
+
+.global{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 586px;
+    border-style: none;
+
+    @media (min-width:240px){
+        display: block;
+    }
+
+    @media (min-width:600px){
+        display: flex;
+    }
+
+}
+
+.global .name{
+    margin-right: 40px;
+    font-size: 25px;
+    @media (min-width:240px){
+        margin: 15px 0;
+    }   
+
+    @media (min-width:600px){
+        margin-right: 40px;
+        margin-top: 0px;
+        margin-bottom: 22px;
+    }
+}
+
+.global .total-cases, .recovered, .deaths{
+    margin-right: 30px;
+    align-items: center;
+}
+
+
+
+.global .name{
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 25px;
+    color: #080808;
+}
+
+
+.global .data{
+    margin-top:5px;
+    @media (min-width:531px){
+        display: flex;
+    }
+
+    @media (min-width:690px){
+        display: flex;
+        width: 424px;
+    }
+}
+
+.global .division{
+
+    @media (min-width:531px){
+        display: flex;
+    }
+}
+
+.global .title{
+    font-size: 1.1rem;
+    @media (min-width:240px){
+        width: 127px;
+    }
+}
+
+.value{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.new-value{
+    font-size: 0.8rem;
+
+    @media (min-width:240px){
+        margin-bottom:1px ;
+    }
+}
+
+.total-cases .title, .total-cases .value, .total-cases .new-value{
+    color: #1b7fc5;
+}
+
+
+
+
+.title, .value, .new-value{
+    height: 20px;
+}
+
+.recovered .title, .recovered .value, .recovered .new-value{
+    color: #0db5a5;
+}
+
+.deaths .title, .deaths .value, .deaths .new-value{
+    color: #ff5656;
+}
+
+.logo{
+    margin-bottom: 24px;
+}
+
+.logo a{
+    display: flex;
+    text-decoration: none;
+}
+
+.logo img{
+    max-width: 49px;
+    max-height: 50px;
+    margin-right: 9px;
+}
+
+.logo h2{
+    font-size: 24px;
+    margin-top: 7px;
+    color: #ff5656;
+}
+
+div{
+    font-weight: 600;
+}
+
+
+:host-context(.light){
+    nav{
+    background-color: var(--l-element);
+    }
+}
+
+:host-context(.dark) nav{
+    background-color:var(--d-element); /* #ded7d7;*/
+}

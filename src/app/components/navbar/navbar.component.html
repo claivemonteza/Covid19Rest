@@ -1,0 +1,51 @@
+<nav>
+    <div class="logo">
+        <a href="https://documenter.getpostman.com/view/10808728/SzS8rjbc" target="_blank">        
+            <img [src]="image" alt="logo">
+            <h2>Covid19</h2>
+        </a>
+    </div>
+    <div class="global">
+        <div class="name">
+            Global
+        </div>
+        <div class="data" [(ngModel)]="global" ngDefaultControl>  
+            <div class="division"> 
+                <div class="total-cases">
+                    <div class="title">
+                        Total Cases
+                    </div>
+                    <div class="value">
+                        {{global?.TotalConfirmed}}
+                    </div>
+                    <div class="new-value">
+                        +{{global?.NewConfirmed}}
+                    </div>
+                </div>     
+            
+                <div class="recovered">
+                    <div class="title">
+                        Total Recovered
+                    </div>
+                    <div class="value">
+                        {{global?.TotalRecovered}}
+                    </div>
+                    <div class="new-value">
+                        +{{global?.NewRecovered}}
+                    </div>
+                </div>
+            </div>   
+            <div class="deaths">
+                <div class="title">
+                  Total Deaths
+                </div>
+                <div class="value">
+                    {{global?.TotalDeaths}}
+                </div>
+                <div class="new-value">
+                    +{{global?.NewDeaths}}
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

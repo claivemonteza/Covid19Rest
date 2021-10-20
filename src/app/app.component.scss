@@ -1,0 +1,15 @@
+.app {
+    width: 100%;
+    /*background-image: url('../assets/img/novel-coronavirus-illustration-m.png');
+    background-size: cover;*/
+}
+  
+.light {
+  background-color: var(--l-bg);
+  color: var(--l-text);
+}
+  
+.dark {
+  background-color: var(--d-bg);
+  color: var(--d-text);
+}
