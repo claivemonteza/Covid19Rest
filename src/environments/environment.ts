@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   name:'prod',
   covid:'https://api.covid19api.com',
   country: 'https://restcountries.com/v2',
