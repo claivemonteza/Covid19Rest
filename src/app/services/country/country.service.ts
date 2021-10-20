@@ -9,7 +9,7 @@ import { Country } from 'src/app/model/country.model';
 })
 export class CountryService {
 
-  private url = `${environment.country}`;
+  private url = `${environment.apicountry}`;
 
   constructor(private http: HttpClient) { }
 

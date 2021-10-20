@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CoronaService {
 
-  private url = `${environment.covid}`;
+  private url = `${environment.api}`;
 
   constructor(private http: HttpClient) { }
 
