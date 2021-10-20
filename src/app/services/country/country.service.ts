@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { Country } from 'src/app/model/country.model';
 
@@ -9,7 +8,7 @@ import { Country } from 'src/app/model/country.model';
 })
 export class CountryService {
 
-  private url = `${environment.apicountry}`;
+  private url = 'https://restcountries.com/v2';
 
   constructor(private http: HttpClient) { }
 
@@ -26,11 +25,11 @@ export class CountryService {
     );
   }
 
-  getAllCountriesDetails(){
+  getAllCountriesDetails() {
     return this.http.get<Country[]>(`${this.url}/all`);
   }
 
-  getCountries(){
+  getCountries() {
     return this.http.get<Country[]>(`${this.url}/all?fields=name;alpha2Code;capital;region;subregion;population;nativeName;flag`);
   }
 }

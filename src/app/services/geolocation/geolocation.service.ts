@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class GeoLocationService {
 
-  private url = `${environment.apigeolocation}`;
+  private url = 'https://ipapi.co/json/';
 
   constructor(private http: HttpClient) { }
 
