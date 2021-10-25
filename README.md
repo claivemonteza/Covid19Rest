@@ -16,4 +16,4 @@ Navigate to `http://localhost:4200/`.
 https://documenter.getpostman.com/view/10808728/SzS8rjbc
 
 ## Live Site
-https://covid19rest.herokuapp.com/
+https://covid19track-70ba5.web.app/
