@@ -36,6 +36,6 @@ export class CountryService {
   }
 
   getAllCountries(){
-    return this.http.get<Country[]>(`${this.url}/countries`);
+    return this.http.get<Country[]>(`${this.api}/countries`);
   }
 }
