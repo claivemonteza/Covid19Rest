@@ -10,6 +10,8 @@ export class CountryService {
 
   private url = 'https://restcountries.com/v2';
 
+  private api = 'https://country-api-restful.herokuapp.com';
+
   constructor(private http: HttpClient) { }
 
   getCountryByName(name: string) {
@@ -31,5 +33,9 @@ export class CountryService {
 
   getCountries() {
     return this.http.get<Country[]>(`${this.url}/all?fields=name;alpha2Code;capital;region;subregion;population;nativeName;flag`);
+  }
+
+  getAllCountries(){
+    return this.http.get<Country[]>(`${this.url}/countries`);
   }
 }

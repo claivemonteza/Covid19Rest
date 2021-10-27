@@ -51,6 +51,10 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.countryservice.getAllCountries().subscribe((countries) => {
+      console.log(countries);
+    });
+    
     this.coronaService.getGlobalData().subscribe((summary) => {
       this.summary = summary;
       this.covid_countries = this.summary.Countries;
