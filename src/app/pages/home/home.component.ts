@@ -31,7 +31,6 @@ const monthsNames = [
 })
 export class HomeComponent implements OnInit {
   private source: Country[];
-  public search_country = 'search-country hide';
   searchFilter?: string;
   name = 'Loading...';
   flag = '';
@@ -78,8 +77,6 @@ export class HomeComponent implements OnInit {
   selected(country) {
     this.name = country.name;
     this.flag = country.flag;
-    this.hidden();
-
     this.corona = this.covid_countries.find((element) => element.Country === country.name);
     this.getCoronaData(this.corona.Country);
   }
@@ -114,7 +111,6 @@ export class HomeComponent implements OnInit {
       this.dates.forEach((date) => {
         formatedDates.push(this.formatDate(date));
       });
-      this.getChart();
     });
   }
 
@@ -122,75 +118,5 @@ export class HomeComponent implements OnInit {
     let date = new Date(dateString);
     return `${date.getDate()} ${monthsNames[date.getMonth() - 1]
       } ${date.getFullYear()}`;
-  }
-
-  getChart() {
-    if (myChart) {
-      myChart.destroy();
-    }
-
-    myChart = new Chart('axes_line_chart', {
-      type: 'line',
-      data: {
-        datasets: [
-          {
-            label: 'Cases',
-            color: '#fff',
-            data: cases,
-            fill: false,
-            borderColor: '#1b7fc5',
-            backgroundColor: '#1b7fc5',
-            borderWidth: 1,
-            type: 'bar',
-          },
-          {
-            label: 'Recovered',
-            color: '#fff',
-            data: recovered,
-            fill: false,
-            borderColor: '#009688',
-            backgroundColor: '#009688',
-            borderWidth: 1,
-            type: 'bar',
-
-          },
-          {
-            label: 'Deaths',
-            color: '#fff',
-            data: deaths,
-            fill: false,
-            borderColor: '#f44336',
-            backgroundColor: '#f44336',
-            borderWidth: 1,
-          },
-        ],
-        labels: formatedDates,
-      },
-      options: {
-        responsive: true,
-        maintainAspectRadio: false,
-
-        scales: {
-          yAxes: [
-            {
-              stacked: true,
-            },
-          ],
-
-        },
-      },
-    });
-  }
-
-  hidden() {
-    this.search_country = 'search-country hide';
-  }
-
-  show() {
-    if (this.search_country === 'search-country') {
-      this.hidden();
-    } else {
-      this.search_country = 'search-country';
-    }
   }
 }
