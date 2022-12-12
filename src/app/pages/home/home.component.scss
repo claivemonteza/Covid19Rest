@@ -13,124 +13,34 @@
     }
 }
 
-.panel{
-    display: flex;
-    width: 71%;
-    justify-content: space-between;
-    align-items: center;
-    color: #080808;
-    
-    @media (min-width:240px){
-        display: block;
-    }
-
-    @media (min-width:600px){
-        display: flex;
-    }
-
-}
 
 
-.country, .total-cases, .recovered, .deaths{
-    height: 100px;
-    align-items: center;
-}
-
-.total-cases, .recovered, .deaths{
-    margin-right: 50px;
-}
-
+/*
 
 .name{
     display: flex;
     font-size: 1.8rem;
     color:#080808;
     font-weight: bold;
-    padding-right: 15rem;
+    padding-right: 11rem;
 }
 
 .name img{
-    width: 100px;
+    border: none;
+    border-radius: 60rem;
+    width: 68px;
+    height: 68px;
     margin-right: 10px;
 }
 
 .name p{
-    margin: 2.5rem 0 0.6rem;
+    margin: 1.5rem 0 0.6rem;
 }
 
-.change-country{
-    margin-left: 7rem;
-    cursor: pointer;
-}
-
-.title{
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #080808;
-    @media (min-width:240px){
-        width: 107px;
-    }
-}
-
-.total-cases .title, .total-cases .value, .total-cases .new-value{
-    font-weight: bold;
-    color: #1b7fc5;
-}
+*/
 
 
-.recovered .title, .recovered .value,  .new-value{
-    font-weight: bold;
-    color: #009688;
-}
 
-.deaths .title, .deaths .value, .deaths .new-value{
-    font-weight: bold;
-    color: #f44336;
-}
-
-.data{
-    @media (min-width:531px){
-        display: flex;
-    }
-
-    @media (min-width:690px){
-        display: flex;
-    }
-}
-
-.division{
-
-    @media (min-width:531px){
-        display: flex;
-    }
-}
-
-.value{
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.new-value{
-    font-size: 1.3rem;
-
-    @media (min-width:240px){
-        margin-bottom:8px ;
-    }
-}
-
-
-.title, .value, .new-value{
-    height: 25px;
-}
-
-
-.recovered .value{
-    color: #009688;
-}
-
-.deaths .value{
-    color: #f44336;
-}
 
 /* -------- CARDS -------- */
 .search{
@@ -161,15 +71,6 @@ country-cards{
     }
   }
 
-/* -------- CHART -------- */
-.chart{
-    width: 80%;
-    height: 45vh;
-    min-height: 285px;
-    margin: 0 auto;
-   /* padding: 50px 0;*/
-   padding-top: 3rem;
-}
 
 /* -------- SEARCH COUNTRY -------- */
 .search-country{

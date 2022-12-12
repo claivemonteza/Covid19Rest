@@ -1,58 +1,10 @@
-<app-navbar [global]="global"></app-navbar>
-<div class="container">
-    <div class="panel">
-        <div class="country">
-            <div class="name">
-                <img [src]="flag" alt="" />
-                <p>{{name}}</p>
-            </div>
-        </div>
-        <div class="data" [(ngModel)]="corona" ngDefaultControl>
-            <div class="division">
-                <div class="total-cases">
-                    <div class="title">
-                        Cases
-                    </div>
-                    <div class="value">
-                        {{corona?.TotalConfirmed}}
-                    </div>
-                    <div class="new-value">
-                        +{{corona?.NewConfirmed}}
-                    </div>
-                </div>
-
-                <div class="recovered">
-                    <div class="title">
-                        Recovered
-                    </div>
-                    <div class="value">
-                        {{corona?.TotalRecovered}}
-                    </div>
-                    <div class="new-value">
-                        +{{corona?.NewRecovered}}
-                    </div>
-                </div>
-            </div>
-            <div class="deaths">
-                <div class="title">
-                    Deaths
-                </div>
-                <div class="value">
-                    {{corona?.TotalDeaths}}
-                </div>
-                <div class="new-value">
-                    +{{corona?.NewDeaths}}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<app-header [global]="global" [details]="details"></app-header>
 <div>
-        <mat-form-field class="search">
-            <mat-label>Search</mat-label>
-            <mat-icon matPrefix>search</mat-icon>
-            <input matInput placeholder="" [(ngModel)]="searchFilter">
-        </mat-form-field>
+    <mat-form-field class="search">
+        <mat-label>Search</mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput [(ngModel)]="searchFilter">
+    </mat-form-field>
     <div class="country-cards">
         <app-country-card *ngFor="let country of countries" [country]="country">
         </app-country-card>

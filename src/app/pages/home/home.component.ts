@@ -3,26 +3,7 @@ import { Country } from 'src/app/model/country.model';
 import { CoronaService } from 'src/app/services/corona/corona.service';
 import { CountryService } from 'src/app/services/country/country.service';
 import { GeoLocationService } from 'src/app/services/geolocation/geolocation.service';
-import { Chart } from 'node_modules/chart.js';
 
-let myChart,
-  cases = [],
-  recovered = [],
-  deaths = [],
-  formatedDates = [];
-const monthsNames = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec',
-];
 
 @Component({
   selector: 'app-home',
@@ -32,16 +13,11 @@ const monthsNames = [
 export class HomeComponent implements OnInit {
   private source: Country[];
   searchFilter?: string;
-  name = 'Loading...';
-  flag = '';
-  value = '';
   summary: any;
-  global?: any;
-  corona?: any;
-  location: any;
-  covid_countries: any[];
-  total_cases: any[];
-  dates = [];
+  global?: any[];
+  covid_countries?: any[];
+
+  details:any;
 
   constructor(
     private countryservice: CountryService,
@@ -50,14 +26,27 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.countryservice.getAllCountries().subscribe((countries) => {
-      console.log(countries);
-    });
-    
     this.coronaService.getGlobalData().subscribe((summary) => {
       this.summary = summary;
       this.covid_countries = this.summary.Countries;
-      this.global = this.summary.Global;
+      this.global = [{
+        description:'Total Cases',
+        color:'cases',
+        value:this.summary.Global.TotalConfirmed,
+        newValue:this.summary.Global.NewConfirmed
+      },
+      {
+        description:'Total Recovered',
+        color:'recovered',
+        value:this.summary.Global.TotalRecovered,
+        newValue:this.summary.Global.NewRecovered
+      },
+      {
+        description:'Total Deaths',
+        color:'deaths',
+        value:this.summary.Global.TotalDeaths,
+        newValue:this.summary.Global.NewDeaths
+      }]
     });
 
     this.countryservice.getAllCountriesDetails().subscribe((countries) => {
@@ -67,18 +56,20 @@ export class HomeComponent implements OnInit {
   }
 
   findLocation(countries: Country[]) {
+    let countryLocation;
     this.locationService.getLocation().subscribe((location) => {
-      this.location = location;
-      const country = countries.find((element) => element.name === this.location.country_name);
+      countryLocation = location;
+      const country = countries.find((element) => element.name === countryLocation.country_name);
       this.selected(country);
     });
   }
 
   selected(country) {
-    this.name = country.name;
-    this.flag = country.flag;
-    this.corona = this.covid_countries.find((element) => element.Country === country.name);
-    this.getCoronaData(this.corona.Country);
+     let corona = this.summary.Countries.find((element) => element.Country === country.name);
+    this.details = {
+      country:country,
+      corona:corona,
+    }
   }
 
   get countries() {
@@ -91,32 +82,5 @@ export class HomeComponent implements OnInit {
           : country
       )
       : this.source;
-  }
-
-  getCoronaData(country_name) {
-    cases = [];
-    recovered = [];
-    deaths = [];
-    this.total_cases = null;
-
-    this.coronaService.getTotalStatus(country_name).subscribe((total) => {
-      this.total_cases = total;
-      this.total_cases.forEach((element) => {
-        cases.push(element.Confirmed);
-        recovered.push(element.Recovered);
-        deaths.push(element.Deaths);
-        this.dates.push(element.Date);
-      });
-
-      this.dates.forEach((date) => {
-        formatedDates.push(this.formatDate(date));
-      });
-    });
-  }
-
-  formatDate(dateString) {
-    let date = new Date(dateString);
-    return `${date.getDate()} ${monthsNames[date.getMonth() - 1]
-      } ${date.getFullYear()}`;
   }
 }

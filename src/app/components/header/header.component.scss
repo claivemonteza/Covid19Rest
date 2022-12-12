@@ -22,11 +22,13 @@ nav{
 
 }
 
-.global{
+
+
+.location, .global{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 586px;
+    width: 522px;
     border-style: none;
 
     @media (min-width:240px){
@@ -37,6 +39,17 @@ nav{
         display: flex;
     }
 
+}
+
+.location .name{
+    display: grid;
+    text-align: center;
+}
+
+.location .name img{
+    max-width: 49px;
+    max-height: 50px;
+    margin-right: 9px;
 }
 
 .global .name{
@@ -53,7 +66,7 @@ nav{
     }
 }
 
-.global .total-cases, .recovered, .deaths{
+.global .cases, .recovered, .deaths{
     margin-right: 30px;
     align-items: center;
 }
@@ -90,7 +103,7 @@ nav{
 .global .title{
     font-size: 1.1rem;
     @media (min-width:240px){
-        width: 127px;
+        width: 135px;
     }
 }
 
@@ -107,23 +120,25 @@ nav{
     }
 }
 
-.total-cases .title, .total-cases .value, .total-cases .new-value{
-    color: #1b7fc5;
+.icon{
+    font-size: 65px;
+    color: rgb(1, 116, 136);
 }
-
-
-
 
 .title, .value, .new-value{
     height: 20px;
 }
 
+.cases .title, .cases .value, .cases .new-value{
+    color: #ff7e30;
+}
+
 .recovered .title, .recovered .value, .recovered .new-value{
-    color: #0db5a5;
+    color: #11dd6a;
 }
 
 .deaths .title, .deaths .value, .deaths .new-value{
-    color: #ff5656;
+    color: #f50909;
 }
 
 .logo{
