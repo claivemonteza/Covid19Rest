@@ -1,0 +1,45 @@
+<nav>
+    <div class="logo">
+        <a href="https://documenter.getpostman.com/view/10808728/SzS8rjbc" target="_blank">
+            <img src="../assets/img/logo.png" alt="logo">
+            <h2>Covid19</h2>
+        </a>
+    </div>
+    <div class="location">
+        <div class="name">
+            <img [src]="details.country.flag" alt="flag"/>
+            {{details.country.name}}
+        </div>
+        <div class="data" *ngFor="let corona of details.corona" >
+            <div [class]="corona.color">
+                <div class="title">
+                    {{corona.description}}
+                </div>
+                <div class="value">
+                    {{corona.value}}
+                </div>
+                <div class="new-value">
+                    +{{corona.newValue}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="global">
+        <div class="name">
+          <mat-icon class="icon" aria-hidden="true" aria-label="World">language</mat-icon>
+        </div>
+        <div class="data" *ngFor="let details of global" >
+            <div [class]="details.color">
+                <div class="title">
+                    {{details.description}}
+                </div>
+                <div class="value">
+                    {{details.value}}
+                </div>
+                <div class="new-value">
+                    +{{details.newValue}}
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

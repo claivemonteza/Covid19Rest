@@ -1,0 +1,55 @@
+:host {
+  cursor: pointer;
+    border-radius: 0.45rem;
+    box-shadow: 0 0 1px rgb(0 0 0);
+}
+
+.country-card {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  font-size: 15px;
+  max-width: 400px;
+  .h2 {
+    color: #21b1dd;
+    font-weight: bolder;
+    font-size: 25px;
+    padding-bottom: 0.5rem;
+  }
+
+  p {
+    padding: 0.25rem 0;
+    font-size: 17px;
+    font-weight: bolder;
+    margin: 0 0 0px;
+  }
+
+  &-img {
+    height: 215px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-info {
+    padding: 0rem 1.5rem 0.8rem;
+  }
+/*
+  &-info {
+    padding: 0rem 1.5rem 3.5rem;
+  }*/
+}
+
+:host-context(.light) {
+  background-color: #e0e0eb8f;
+}
+
+:host-context(.dark) {
+    background-color: var(--d-element);
+}
