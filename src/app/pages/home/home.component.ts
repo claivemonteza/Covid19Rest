@@ -68,8 +68,30 @@ export class HomeComponent implements OnInit {
      let corona = this.summary.Countries.find((element) => element.Country === country.name);
     this.details = {
       country:country,
-      corona:corona,
+      corona:[
+        {
+          description:'Total Cases',
+          color:'cases',
+          value:corona.TotalConfirmed,
+          newValue:corona.NewConfirmed
+        },
+        {
+          description:'Total Recovered',
+          color:'recovered',
+          value:corona.TotalRecovered,
+          newValue:corona.NewRecovered
+        },
+        {
+          description:'Total Deaths',
+          color:'deaths',
+          value:corona.TotalDeaths,
+          newValue:corona.NewDeaths
+        },
+      ]
     }
+
+
+    console.log(this.details);
   }
 
   get countries() {

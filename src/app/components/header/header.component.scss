@@ -8,7 +8,7 @@
 
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 2rem 1rem;
     @media (min-width:240px){
@@ -47,9 +47,9 @@ nav{
 }
 
 .location .name img{
-    max-width: 49px;
-    max-height: 50px;
-    margin-right: 9px;
+    width: 90px;
+    height: 60px;
+    border-radius: 10px;
 }
 
 .global .name{

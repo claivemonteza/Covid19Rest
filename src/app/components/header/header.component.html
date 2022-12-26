@@ -10,16 +10,16 @@
             <img [src]="details.country.flag" alt="flag"/>
             {{details.country.name}}
         </div>
-        <div class="data" *ngFor="let details of global" >
-            <div [class]="details.color">
+        <div class="data" *ngFor="let corona of details.corona" >
+            <div [class]="corona.color">
                 <div class="title">
-                    {{details.description}}
+                    {{corona.description}}
                 </div>
                 <div class="value">
-                    {{details.value}}
+                    {{corona.value}}
                 </div>
                 <div class="new-value">
-                    +{{details.newValue}}
+                    +{{corona.newValue}}
                 </div>
             </div>
         </div>
