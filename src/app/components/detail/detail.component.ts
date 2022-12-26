@@ -8,12 +8,6 @@ import { CoronaService } from 'src/app/services/corona/corona.service';
 import { CountryCoronaExchangerService } from 'src/app/shared/country-corona-exchanger.service';
 
 
-let
-  cases = [],
-  recovered = [],
-  deaths = [];
-
-
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -21,10 +15,9 @@ let
 })
 export class DetailComponent implements OnInit {
   country$: Observable<Country>;
-  name = 'Loading...';
-  flag = '';
-  value = '';
   covid_countries: any[];
+  summary: any;
+  coronaDetails:any;
 
   constructor(private countryService: CountryService, 
     private coronaService: CoronaService,
@@ -32,24 +25,23 @@ export class DetailComponent implements OnInit {
     private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-
     this.exchanger.update.subscribe((data) => {
       this.covid_countries = data;
     });
 
     this.route.params.subscribe((params) => {
       this.country$ = this.countryService.getCountryByName(params.country).pipe(
-        tap((res) => console.log(res)),
-      );
+        tap((res) => this.details(res.name)));
     });
   }
-/*
-  selected(country) {
-    this.name = country.name;
-    this.flag = country.flag;
-    this.corona = this.covid_countries.find((element) => element.Country === country.name);
-    this.getCoronaData(this.corona.Country);
-  }*/
 
+
+  details(name:string){
+    this.coronaService.getGlobalData().subscribe((summary) => {
+      this.summary = summary;
+      this.covid_countries = this.summary.Countries;
+     this.coronaDetails= this.covid_countries.find((element) => element.Country === name);
+    });
+  }
   
 }

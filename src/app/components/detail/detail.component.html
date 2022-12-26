@@ -7,7 +7,6 @@
       <img [src]="country.flag" />
       <div class="country-detail">
         <h3>{{ country.name }}</h3>
-  
         <div class="country-info">
           <div class="country-section">
             <p>
@@ -22,7 +21,19 @@
               <strong>Area:</strong>
               {{ country.area }}
             </p>
-          </div>
+            <p>
+              <strong>Confirmed Cases:</strong>
+              {{ coronaDetails.TotalConfirmed }}
+            </p>
+            <p>
+              <strong>Recorveded:</strong>
+              {{ coronaDetails.TotalRecovered }}
+            </p>
+            <p>
+              <strong>Deaths:</strong>
+              {{ coronaDetails.TotalDeaths }}
+            </p>
+          </div>  
       </div>
     </div>
   </div>
